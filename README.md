@@ -64,12 +64,14 @@ This image already has ssh enabled and should be configured to be ready-to-go. M
 First of all, a maze must be loaded. Follow the steps [here](https://github.com/athenian-robotics/lidar_navigation/blob/master/gzmaze.md) to configure the maze plugin for gazebo.
 
 **Note:** This is not always entirely consistent, and has been met with some issues from time to time. 
-In the event that the plugin does not build and Gazebo refuses to find the mazes, a possible solution is to copy the maze files themselves to `/usr/share/gazebo-7/models/`.
+In the event that the plugin does not build and Gazebo refuses to find the mazes, a possible solution is to copy the maze files themselves to `/usr/share/gazebo-7/models/`.  
 Another possible solution is to add `export GAZEBO_MODEL_PATH=$HOME/catkin_ws/src/lidar_nagivation/models/:$GAZEBO_MODEL_PATH` to your `~/.bashrc`.
 
 
 Once Gazebo is configured, follow the instructions [here](https://github.com/athenian-robotics/lidar_navigation#start-a-turtlebot3) to get your Turtlebot3 initialized. This creates a roscore, and so any other ROS nodes run will connect to it. After that, to start up some nodes, follow the rest of the instructions on that page.
+
 The bare minimum that you need to run to get the robot to move (in sim) are, as outlined:
+
 ```
 roslaunch turtlebot3_gazebo turtlebot3_empty_world.launch
 rosrun lidar_navigation teleop_node.py
@@ -78,11 +80,13 @@ rosrun lidar_navigation geometry_node.py
 # To stop it after killing geometry_node
 rosrun lidar_navigation stop_node.py
 ```
+
 The other parts outlined are for visual purposes to help with debugging, to help with understanding, and also for future possible pursuits.
 
 # Bonus: SLAM
 
 The Turtlebot3 also comes packaged with a very useful SLAM package, which allows it to map out its environment. It meshes very well with lidar_navigation code, and is included with the turtlebot3 packages.
+
 If it isn't present, it can be installed with
 
 ```sh
