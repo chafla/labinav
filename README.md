@@ -65,8 +65,9 @@ First of all, a maze must be loaded. Follow the steps [here](https://github.com/
 
 **Note:** This is not always entirely consistent, and has been met with some issues from time to time. 
 In the event that the plugin does not build and Gazebo refuses to find the mazes, a possible solution is to copy the maze files themselves to `/usr/share/gazebo-7/models/`.  
-Another possible solution is to add `export GAZEBO_MODEL_PATH=$HOME/catkin_ws/src/lidar_nagivation/models/:$GAZEBO_MODEL_PATH` to your `~/.bashrc`.
-
+Another possible solution is to run ```sh
+echo "export GAZEBO_MODEL_PATH=$HOME/catkin_ws/src/lidar_nagivation/models/:$GAZEBO_MODEL_PATH" >> ~/.bashrc
+```
 
 Once Gazebo is configured, follow the instructions [here](https://github.com/athenian-robotics/lidar_navigation#start-a-turtlebot3) to get your Turtlebot3 initialized. This creates a roscore, and so any other ROS nodes run will connect to it. After that, to start up some nodes, follow the rest of the instructions on that page.
 
